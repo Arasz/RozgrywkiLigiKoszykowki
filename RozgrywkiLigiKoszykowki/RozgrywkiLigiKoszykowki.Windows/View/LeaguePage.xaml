@@ -8,11 +8,14 @@
     xmlns:common="using:RozgrywkiLigiKoszykowki.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="using:RozgrywkiLigiKoszykowki.View"
+    xmlns:viewmodel="using:RozgrywkiLigiKoszykowki.ViewModel"
     mc:Ignorable="d">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Koszykówka. Rusz głową.</x:String>
+        <viewmodel:LeagueViewModel x:Name="LeagueViewModel"/>
     </Page.Resources>
 
     <!--
@@ -46,5 +49,10 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="120,0,0,0"
+                    DataContext="{StaticResource ResourceKey=LeagueViewModel}"> 
+                    <view:RosterControl DataContext="{Binding JimmysTeam}" Margin="0,0,20,0"/>
+                    <view:RosterControl DataContext="{Binding BriansTeam}" Margin="0,0,20,0"/>
+        </StackPanel>
     </Grid>
 </Page>

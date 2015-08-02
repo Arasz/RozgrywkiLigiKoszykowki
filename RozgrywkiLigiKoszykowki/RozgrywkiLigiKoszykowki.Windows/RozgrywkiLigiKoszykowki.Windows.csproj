@@ -104,7 +104,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\NavigationHelper.cs" />
@@ -114,6 +113,9 @@
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Roster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LeagueViewModel.cs" />
+    <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="ViewModel\RosterViewModel.cs" />
     <Compile Include="View\LeaguePage.xaml.cs">
       <DependentUpon>LeaguePage.xaml</DependentUpon>
     </Compile>
